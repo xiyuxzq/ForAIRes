@@ -2,7 +2,7 @@
 
 ## 定义
 
-Data Layers 是一个系统，旨在为运行时和编辑提供条件性加载世界数据。演员和 World Partition 定义流送逻辑（Is Spatially Loaded、Runtime Grid 和 Enable Streaming），而 Data Layers 作为关卡流送的过滤器。
+Data Layers 是一个系统，旨在为运行时和编辑提供条件性加载世界数据。Actor和 World Partition 定义流送逻辑（Is Spatially Loaded、Runtime Grid 和 Enable Streaming），而 Data Layers 作为关卡流送的过滤器。
 
 ## 类型和状态
 
@@ -36,7 +36,7 @@ Data Layers 是一个系统，旨在为运行时和编辑提供条件性加载�
 - 使用每个数据层的 Load Filter 选项定义数据层是否应仅在客户端或服务器端加载
 
 ### 外部包数据层实例
-- 通过将数据层实例外部化为单独的文件，消除了对 WorldDataLayers 演员的争用
+- 通过将数据层实例外部化为单独的文件，消除了对 WorldDataLayers Actor的争用
 
 ### 运行时默认逻辑运算符
 - 公开在创建新关卡时应使用的默认逻辑运算符
@@ -60,16 +60,16 @@ Data Layers 是一个系统，旨在为运行时和编辑提供条件性加载�
 
 1. **OR 逻辑**
    - 在运行时和编辑器中，数据层逻辑操作都是 OR
-   - 只要其中一个数据层加载或激活，演员就会加载
+   - 只要其中一个数据层加载或激活，Actor就会加载
    - 注意：5.4 引入了 AND 作为可选的数据层逻辑运算符
 
 2. **层次和最小逻辑**
    - 在数据层层次结构中，应用了与父数据层状态的最小逻辑
    - 编辑器专用数据层不能是运行时数据层的子级
 
-3. **WorldDataLayers 演员**
-   - 数据层实例添加到 WorldDataLayers 演员中
-   - 这个演员是一个外部演员文件
+3. **WorldDataLayers Actor**
+   - 数据层实例添加到 WorldDataLayers Actor中
+   - 这个Actor是一个外部Actor文件
    - 频繁操作可能导致争用和冲突
 
 ## 实际应用案例

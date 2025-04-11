@@ -2,9 +2,9 @@
 
 ## 定义
 
-Hierarchical Level Of Detail (HLODs) 是一组演员的视觉表示，旨在从相当远的距离替换这些演员。它通常是一个单一的网格和材质，从原始演员的几何体构建而成，但经过简化以减少内存使用。用 HLOD 替换多个演员通常会将绘制调用从 N 减少到 1，从而提高性能。
+Hierarchical Level Of Detail (HLODs) 是一组Actor的视觉表示，旨在从相当远的距离替换这些Actor。它通常是一个单一的网格和材质，从原始Actor的几何体构建而成，但经过简化以减少内存使用。用 HLOD 替换多个Actor通常会将绘制调用从 N 减少到 1，从而提高性能。
 
-World Partition HLODs 与传统的 UE 4.x HLODs 不同，因为它们不与关卡链接。它们是从 World Partition 网格生成的，无需管理演员集群。
+World Partition HLODs 与传统的 UE 4.x HLODs 不同，因为它们不与关卡链接。它们是从 World Partition 网格生成的，无需管理Actor集群。
 
 ## UE 5.4 重要更新
 
@@ -40,9 +40,9 @@ World Partition HLODs 与传统的 UE 4.x HLODs 不同，因为它们不与关�
 
 ## 陷阱
 
-1. **将所有演员保留在 HLODs 中**
-   - 使用 HLODs 的首要目标仍然是减少演员数量并提高性能，同时保持距离质量
-   - 小演员、内部、地下和所有不重要的资产不应添加到 HLODs 中
+1. **将所有Actor保留在 HLODs 中**
+   - 使用 HLODs 的首要目标仍然是减少Actor数量并提高性能，同时保持距离质量
+   - 小Actor、内部、地下和所有不重要的资产不应添加到 HLODs 中
 
 2. **电影和远景放大镜头**
    - 长焦距镜头可能导致从近距离查看简化的 HLODs 时出现非常糟糕的视觉效果
@@ -56,7 +56,7 @@ World Partition HLODs 与传统的 UE 4.x HLODs 不同，因为它们不与关�
 
 2. **地形 HLODs**
    - 地形代理的 HLODs 特定于此系统
-   - 目前无法使用为其他演员设置的相同 HLODs 设置
+   - 目前无法使用为其他Actor设置的相同 HLODs 设置
 
 3. **尚无自定义 HLOD 支持**
    - 系统目前不允许指定自定义构建的 HLODs
@@ -81,7 +81,7 @@ World Partition HLODs 与传统的 UE 4.x HLODs 不同，因为它们不与关�
 
 ## 未来发展
 
-1. 演员和关卡实例的自定义 HLODs 支持
+1. Actor和关卡实例的自定义 HLODs 支持
 2. 简化和全局 HLODs 生成性能改进（在 5.5 中完成）
 3. 完全卸载时子世界分区的 HLOD 支持
 
